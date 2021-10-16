@@ -1,0 +1,700 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Template </title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="icon" type="text/css" href="{% static 'Images/favicon.ico' %}">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caladea&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js'></script>
+        <script type="text/javascript" src="https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js"></script>
+        <script src="https://cdn.tiny.cloud/1/gb94ayimdpbmdkm7vwaar3jrd0b23pg81d1hiblwjwhow025/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <style type="text/css">
+            .col-lg-4 {
+                
+                color:white;
+                padding-bottom:8px;
+            }
+            img {
+                height:150px;
+                width:150px;
+                border-radius:50%;
+                margin-top:40px;
+                margin-bottom:40px;
+
+                border:3px solid white;
+                position:relative;
+                left:50%;
+                transform:translate(-50%,0%);
+                object-fit:cover;
+            }
+            h6{
+                width:50%;
+               
+            }
+            /* html { font-size: 62.5%; }  */
+            #name {
+                margin-top:20px;
+                margin-bottom:20px;
+                text-align:center;
+                border-bottom:2px solid white;
+                padding-bottom:16px;
+                margin-left:27px;
+                margin-right:26px;
+            }
+            .white-border{
+                border-bottom:2px solid white;
+                padding-bottom: 10px;
+            }
+            .space {
+                margin-top:-7px;
+            }
+            .left-right {
+                padding-left:27px;
+                padding-right:26px;
+            }
+            /* p {
+                font-size:14px;
+            } */
+            .col-lg-8 {
+                padding-top:30px;
+                background-color:white;
+            }
+            .col-lg-10 {
+                margin-bottom:30px;
+                margin-top:30px;
+            }
+            .box1[contenteditable]:focus {
+                outline:0px solid transparent;
+                border:2px solid white;
+                padding-top:12px;
+                margin-bottom:8px;
+            }
+            .box2[contenteditable]:focus {
+                outline:0px solid transparent;
+                border:2px solid black;
+                padding-top:12px;
+                margin-bottom:8px;
+            }
+            body {
+                background-color:#f1f1f1;
+            }
+            h6{
+                font-size: 1.17em;
+            }
+            .navbar {
+                background-color:white;
+            }
+            select {
+                cursor:pointer;
+                text-indent:0px;
+                /*-moz-appearance:none;
+                -webkit-appearance:none;*/
+            }
+            .list1 {
+                margin-left:10px;
+                margin-right:16px;
+                outline:none;
+                border:none;
+                border:1px solid cadetblue;
+                font-weight:600;
+                border-radius:4px;
+                box-shadow:0.8px 0.8px 2px cadetblue;
+                width:160px;
+                padding-left:6px;
+                padding-bottom:6px;
+                padding-top:4px;
+            }
+            #list2 {
+                margin-left:10px;
+                margin-right:16px;
+                outline:none;
+                border:none;
+                border:1px solid cadetblue;
+                font-weight:600;
+                border-radius:4px;
+                box-shadow:0.8px 0.8px 2px cadetblue;
+                width:90px;
+                padding-left:6px;
+                padding-bottom:6px;
+                padding-top:4px;
+            }
+            .list option {
+                cursor:pointer;
+            }
+            .color i {
+                font-size:28px;
+                position:relative;
+                top:50%;
+                transform:translate(0%,-50%);
+                margin-left:5px;
+                margin-right:16px;
+                background:-webkit-linear-gradient(#439bcb, #d3484b, #606060, #292b40, #336699, #55ad63, #f0f0f0, #484e5e, #9edcd1, #3b4358, #5E40EC, #B4325F);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                cursor:pointer;
+            }
+            .upload i {
+                font-size:28px;
+                position:relative;
+                top:50%;
+                transform:translate(0%,-40%);
+                /* margin-left:5px;
+                margin-right:16px; */
+                color:#4f8d98;
+                margin-top:-2px;
+                padding-right: 9px;
+            }
+            .delete i {
+                size:2x;
+                font-size:25px;
+                position:relative;
+                top:50%;
+                transform:translate(0%,-50%);
+                margin-left:2px;
+                margin-right:16px;
+                color:#4f8d98;
+                cursor:pointer;
+            }
+
+            /* .font{
+               font-size:40px;
+            } */
+            #border1 {
+                border:2px solid #4f8d98;
+                border-radius:6px;
+                margin-right:12px;
+                padding-left:5px;
+                padding-right:-12px;
+                cursor:pointer;
+            }
+            #border2 {
+                border:2px solid #4f8d98;
+                border-radius:6px;
+                margin-right:12px;
+                padding-left:5px;
+                padding-right:-12px;
+                padding-bottom:2px;
+                cursor:pointer;
+            }
+            #border3 {
+                border:2px solid #4f8d98;
+                border-radius:6px;
+                margin-right:12px;
+                padding-left:15px;
+                padding-right:-12px;
+                padding-bottom:2px;
+                cursor:pointer;
+            }
+            #border4 {
+                  
+                border:2px solid #4f8d98;
+                border-radius:6px;
+                margin-right:12px;
+                padding-left:5px;
+                padding-right:-12px;
+                padding-bottom:2px;
+                cursor:pointer;
+            
+            }
+              #palette1,
+            #palette2 {
+                visibility: hidden;
+                margin-left: -48px;
+            }
+
+            #palette1,
+            #palette2 {
+                position: absolute;
+                margin-top: 30px;
+                margin-left: 4px;
+            }
+
+            #margin {
+                margin-left:7px;
+            }
+            #image {
+                display:none;
+            }
+            #page{
+                
+            }
+            
+                        .checkbox label {
+                        min-height: 20px;
+                        /* padding-left: 20px; */
+                        margin-bottom: 0;
+                        font-weight: 400;
+                        cursor: pointer;
+                    }
+            button.close {
+                -webkit-appearance: none;
+                padding: 0;
+                cursor: pointer;
+                background: 0 0;
+                border: 0;
+            }
+
+             .small-border{
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid black;
+                }
+                .space1{
+                    margin-bottom: 20px;
+                }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <li class="nav-item" id="margin">
+                      Header Font
+                      <select class="list1 input" id = "input-font" onchange="changeFontStyleHeader (this);">
+                          <option value="Arial" selected="selected">Arial</option>
+                          <option value="EB Garamond" >EB Garamond</option>
+                          <option value="Assistant">Assistant</option>
+                          <option value="Montserrat">Montserrat</option>
+                          <option value="Ubuntu">Ubuntu</option>
+                          <option value="Roboto">Roboto</option>
+                          <option value="Lato">Lato</option>
+                          <option value="Arimo">Arimo</option>
+                          <option value="Oxygen">Oxygen</option>
+                          <option value="Crismon Text">Crismon Text</option>
+                          <option value="Nunito">Nunito</option>
+                          <option value="Caladea">Caladea</option>
+                          <option value="Source Serif Pro">Source Serif Pro</option>
+                      </select>
+                  </li>
+                  <li class="nav-item">
+                      Body Font
+                      <select class="list1 input" id = "input-font" onchange="changeFontStyle (this);">
+                          <option value="Arial" selected="selected">Arial</option>
+                          <option>EB Garamond</option>
+                          <option>Assistant</option>
+                          <option>Montserrat</option>
+                          <option>Ubuntu</option>
+                          <option>Roboto</option>
+                          <option>Lato</option>
+                          <option>Arimo</option>
+                          <option>Oxygen</option>
+                          <option>Crismon Text</option>
+                          <option>Cormorant</option>
+                          <option>Caladea</option>
+                          <option>Source Serif Pro</option>
+                      </select>
+                  </li>
+                  <li class="nav-item">
+                      Font Size
+                      <select id="list2" onchange="changeFontSize (this);"">
+                          <option>10px</option>
+                          <option>12px</option>
+                          <option  selected="selected">14px</option>
+                          <option>16px</option>
+                          <option>18px</option>
+                          <option>20px</option>
+                          <option>22px</option>
+                      </select>
+                  </li>
+                  <li class="nav-item">
+                      Heading Color
+                    <input type="color" id="palette1" value="#1C3A54">
+                      <span class="color"><i class="fa fa-circle icon1" aria-hidden="true"></i></span>
+                  </li>
+                  <!-- <li class="nav-item">
+                    Body Color
+                    <input type="color" id="palette2" value="#5f9ea0">
+                      <span class="color"><i class="fa fa-circle icon2" aria-hidden="true"></i></span>
+                  </li> -->
+                  <li class="nav-item" id="border3" data-toggle  = "modal" data-target = "#mymodal">
+                      Section
+                      <span class="delete"><i class="fas fa-list-alt" aria-hidden="true"></i></span>
+                      <!-- <div class="modal fade" id="mymodal" backdrop = "static">
+                          <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                            <h5 class = "modal-title">Modal-Title</h5>
+                                            <button class = "close" data-dismiss = "modal">
+                                                <span>&times;</span>
+                                            </button>
+                                       </div>
+                                        <div class="modal-body">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ducimus, dolorem pariatur eius sapiente laboriosam officiis neque numquam quidem explicabo iure rerum ex harum error repellendus voluptas possimus qui accusantium suscipit nesciunt dignissimos velit enim quod. Repellat, deleniti nisi explicabo voluptatibus eos similique ducimus cumque accusantium dignissimos quaerat dolores porro, voluptate quibusdam impedit error nostrum? Voluptatum ipsum reprehenderit nihil incidunt, id in recusandae repellat hic assumenda delectus accusamus debitis, cum eaque vel necessitatibus. Explicabo, dolorem quaerat reprehenderit deleniti vel quisquam, ipsum fugit, ex ratione tempora doloremque soluta expedita cum laudantium dolor! Placeat quam vitae sed itaque illo deserunt. Dolorem nihil numquam voluptatibus laboriosam eos aperiam repellat, eius molestiae, enim at libero aut ratione, eaque inventore. Ipsum nobis, quas, accusamus quo nihil illum molestiae sint praesentium quaerat id magni esse explicabo reiciendis, nemo fugiat ducimus sunt cumque veritatis expedita delectus voluptate eligendi tempore. Repudiandae corrupti eum dicta ipsa, nobis labore in debitis saepe doloribus corporis et quasi quibusdam sequi obcaecati iusto nulla blanditiis ad necessitatibus. Reiciendis aperiam nulla necessitatibus, ab itaque harum cupiditate officia dicta! Consectetur itaque adipisci, eligendi, facere temporibus maxime repellat deserunt veniam libero quibusdam expedita natus. Doloribus eaque quisquam ducimus perferendis nobis voluptatum odio facere repellat iste totam quas facilis deserunt illum, consectetur sapiente dolorem consequatur, nulla distinctio? Culpa dicta ut magnam necessitatibus repellendus excepturi facilis consequuntur id nemo ab doloribus maiores eos illo hic, cum qui animi tempora ipsa pariatur perferendis inventore esse. Vitae voluptas perspiciatis ad et facere inventore vel autem doloribus quae ipsa ea tenetur numquam quaerat quam fuga quibusdam, magnam suscipit reprehenderit fugit minima officia quo praesentium, quis incidunt. Dolorum asperiores eaque quisquam harum, deserunt nihil, facere ducimus doloribus ab tempora eius ipsum maiores distinctio accusamus enim quia dolore nulla! Ipsa facere voluptatibus tempore ipsam aut. Ipsum itaque, odit corrupti voluptate odio nemo delectus?
+                                        </div>
+                                        <div class = "modal-footer">
+                                                <button class = ".btn btn-danger" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>
+                      </div> -->
+                  </li>
+                  <li class="nav-item" id="border1">
+                      <input type="file" id="image">
+                      Upload Photo
+                      <span class="upload"><i class="fas fa-cloud-upload-alt"></i></span>
+                  </li>
+                  <li class="nav-item" id="border2">
+                      Delete Photo
+                      <span class="delete"><i class="fas fa-trash-alt" aria-hidden="true"></i></span>
+                  </li>
+                  <li class = "nav-item" id= "border4">
+                      Export PDF
+                      <span class = "delete"><i class="fas fa-download"></i></span>
+                  </li>
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+        <!-- <button id = download onclick = "createpdf();"> Export PDF </button> -->
+        <div class="container" spellcheck="false">
+            <div class="row" id = "page">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="row" id = "spell">
+                        <div class="col-lg-4" id  = "color" >
+                            <div id = "sectionPhoto">
+                                <img src="{% static 'Images/image2.jpg' %}" id="img" alt ="loading">
+                            </div>
+                            <div>
+                                <h3 id="name" class="box1 auto-save" contenteditable="true" >STEFFAN SNOW</h3>
+                            </div>
+                        
+                            <div class="left-right box1"id = "sectionDescription" contenteditable="true">
+                                <h4 class ="auto-save white-border" id="contact">CONTACT INFORMATION</h4>
+                                <h6>Address:</h6>
+                                <p class="space auto-save" id = "address">HNo 1234, Vishnu Garden, Yamunanagar</p>
+                                <h6 class="space">Phone:</h6>
+                                <p class="space auto-save" id = "phoneno" >+91 9993656789</p>
+                                <h6 class="space">Email:</h6>
+                                <p class="space auto-save" id = "email">chaya@gmail.com</p>
+                                <h6 class="space">LinkedIn:</h6>
+                                <p class="space auto-save" id = "linkedin">www.linkedin.com/in/chaya-dewi</p>
+                            </div>
+                            <div class="left-right box1" contenteditable="true" id = "sectionAbout">
+                                <h4 class = "white-border">ABOUT ME</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi dolor harum porro possimus iste debitis omnis quos voluptatem cumque odit ipsum hic minima libero, minus similique vitae natus quasi nulla praesentium sunt officia. Tempora enim unde facere voluptatem porro.</p>
+                            </div>
+                            <div class="left-right box1" id = "sectionAchievement" contenteditable="true" >
+                                <h4 class = "white-border">ACHIEVEMENTS</h4>
+                                <p class = "auto-save box1" id = "achievement">
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, alias asperiores aperiam quae sit rerum, ullam et iure odit, minus error soluta deserunt blanditiis. Totam libero amet enim ipsum nisi.                                    <br>
+                                    - Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                    <br>
+                                    - When an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                            </div>
+                            <div class="left-right box1" contenteditable="true" id = "sectionSkills">
+                                <h4 class = "white-border">SOFT SKILLS</h4>
+                                <p>
+                                    - Teamwork
+                                    <br>
+                                    - Leadership
+                                    <br>
+                                    - Communication Skills
+                                    <br>
+                                    - Time management
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="left-right space box2" contenteditable="true" id="sectionEducation">
+                                <h4 class = "color1 small-border">EDUCATION</h4>
+                                <h6 class = "color1">B.TECH (CSE)</h6>
+                                <p class="space">
+                                    Seth Jai Prakash Mukand Lal Institute of Engineering and Technology, Radaur | Kurukshetra University | 2018 - Present
+                                    <br>
+                                    Percentage: 90% (upto 5th semester)
+                                </p>
+                                <h6 class = "color1">SENIOR SECONDARY CERTIFICATE</h6>
+                                <p class="space">
+                                    S.D. Public School, Jagadhri | CBSE | 2017 - 2018
+                                    <br>
+                                    Percentage: 90%
+                                </p>
+                                <h6 class = "color1">MATRICULATION</h6>
+                                <p class="space">
+                                    S.D. Public School, Jagadhri | CBSE | 2015 - 2016
+                                    <br>
+                                    Percentage: 90%
+                                </p>
+                            </div>
+                            <div class="left-right box2" contenteditable="true" id = "sectionTraining">
+                                <h4 class = "color1 small-border">TRAININGS</h4>
+                                <h6 class = "color1 space1">PYTHON <br> (Duration - 2 weeks)</h6>
+                                <p class="space">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti voluptate, omnis provident, sapiente molestias consequatur saepe dolorem nam, voluptatibus
+                                    quaerat esse hic veniam quasi dignissimos. Laboriosam molestias, fugit incidunt minima non quos repudiandae nam mollitia consectetur vitae pariatur perferendis omnis aspernatur delectus sunt at. Minus, culpa quas a commodi perferendis ab, natus omnis vero hic enim doloribus cum alias ex.
+                                </p>
+                                <h6 class = "color1 space1">JAVASCRIPT <br> (Duration - 3 weeks)</h6>
+                                <p class="space">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui est, rerum labore laudantium illo ullam libero doloribus eum repellendus culpa blanditiis quia, ducimus aspernatur architecto laboriosam facere possimus sequi sapiente,
+                                    ipsum tempora similique voluptatibus fugit? Fuga ducimus officiis veniam quis? Vitae voluptatem quos totam necessitatibus laborum. Doloribus aliquid facilis error?
+                                    ipsum tempora similique voluptatibus fugit? Fuga ducimus officiis veniam quis? Vitae voluptatem quos totam necessitati
+                                </p>
+                            </div>
+                            <div class="left-right box2" contenteditable="true" id = "sectionProjects">
+                                <h4 class = "color1 small-border">PROJECTS</h4>
+                                <h6 class = "color1 space1">LIBRARY MANAGEMENT SYSTEM <br> (Duration: 1 week)</h6>
+                                <p class="space">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis commodi ipsum architecto culpa ipsa vero facere, quaerat dolor optio q
+                                    ipsum tempora similique voluptatibus fugit? Fuga ducimus officiis veniam quis? Vitae voluptatem quos totam necessitati
+                                    uisquam vel voluptatibus non labore id rem earum. Provident sunt voluptas veritatis quibusdam, illum architecto suscipit eos voluptatum illo atque eveniet nobis, deleniti corrupti, nihil impedit necessitatibus culpa accusantium.
+                                </p>
+                                <h6 class = "color space1">Canteen MANAGEMENT SYSTEM <br> (Duration: 1 week)</h6>
+                                <p class="space">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa numquam tempora autem quibusdam dolore at nemo voluptas quis totam? Sequi odit, ea
+                                    facere neque adipisci vero eaque ipsa deleniti autem eum possimus iure, magni quia dolores. Unde, ratione. Quia harum magnam dolorem dolor cumque, tempore perferendis obcaecati!
+                                </p>
+                            </div>
+                            <div class="left-right box2" contenteditable="true" id = "SectionTechnicalSkill">
+                                <h4 class = "color1 small-border">TECHNICAL SKILLS</h4>
+                                <p>
+                                    - Beginner in C, Django, Machine Learning.
+                                    <br>
+                                    - Sufficient knowledge of Artificial Intelligence, Data Analytics, Python.
+                                    <br>
+                                    - Proficient in C++, Java, Cloud Computing.
+                                </p>
+                            </div>
+                            <div class="left-right box2" contenteditable="true" id = "sectionCertificate">
+                                <h4 class = "color1 small-border ">CERTIFICATES</h4>
+                                <p>
+                                    - Master class in Cloud Computing
+                                    <br>
+                                    - - Master class in Artificial Intelligence
+                                    <br>
+                                    --  Master in Big Data & Hadoop
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="modal fade" id="mymodal" tabindex='-1'>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sections</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionDescription"id="flexSwitchCheckChecked">Info</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionAbout">About</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionAchievement">Achievement</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionSkills">Soft Skills</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionEducation">Education</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionTraining">Training</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionProjects">Projects</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="SectionTechnicalSkill">Technical Skills</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionCertificate">Certificates</label></div>
+                            <div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true"
+                                        value="sectionPhoto">Remove Photo</label></div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="savy.js"></script>
+        <script type="text/javascript">
+            var border1=document.getElementById('border1');
+            var border2=document.getElementById('border2');
+            var border3=document.getElementById('border3');
+            var border4 = document.getElementById('border4');
+            var image=document.getElementById('image');
+            var img=document.getElementById('img');
+            var palette1 = document.getElementById('palette1');
+            var palette2 = document.getElementById('palette2');
+            var icon1 = document.querySelector('.icon1');
+            var icon2 = document.querySelector('.icon2');
+
+            icon1.addEventListener('click', function () {
+                palette1.click();
+            });
+            // icon2.addEventListener('click', function () {
+            //     palette2.click();
+            // });
+            let file;
+            border1.addEventListener('click', function(){
+                image.click();
+            })
+
+            border4.addEventListener('click', function(){
+                let body = document.body
+                let html = document.documentElement
+                let height = Math.max(body.scrollHeight, body.offsetHeight,
+                    html.clientHeight, html.scrollHeight, html.offsetHeight)
+                let element = document.querySelector('#page')
+                let heightCM = height / 35.35
+                html2pdf(element, {
+
+                    margin: [-1, -3, -8, 0],
+                    // margin: [-1,-1,-1,0],
+
+                    filename: 'MyResume.pdf',
+                    image: { type: 'jpeg', quality: 4 },
+                    html2canvas: { dpi: 400, letterRendering: true, scale: 3 },
+                    jsPDF: {
+                        orientation: 'portrait',
+                        unit: 'cm',
+                        //   format: [heightCM, 50]
+                        format: 'a3'
+
+                    }
+                }).save()
+            })
+
+            // var box = document.getElementById('color');
+            // document.getElementById("palette2").addEventListener("change", function () {
+            //        box.style.backgroundColor = this.value;
+            //     });
+            var box = document.getElementById('color');
+            let colorpicker = document.getElementById('palette1');
+             setInterval(() => {
+                    let color = colorpicker.value;
+                    box.style.backgroundColor = color;
+                }, 200);
+
+            // var box1 = document.querySelectorAll('.color1');
+            // var picker = document.getElementById('palette1');
+            // // picker.addEventListener('change', function () {
+            // //         for (let i = 0; i < 15; i++) {
+            // //             box1[i].style.backgroundColor = this.value;
+            // //         }
+            // //     });
+            
+            // setInterval(() => {
+            //         let color = picker.value;
+            //         for (let i = 0; i < box1.length; i++) {
+            //         box1[i].style.backgroundColor = color;
+            //         }
+            //     }, 200);
+
+                
+            image.addEventListener("change",function(){
+                file=this.files[0];
+                showfile();
+            });
+            function showfile(){
+                let filetype=file.type;
+                let validextensions=["image/jpeg","image/jpg","image/png"];
+                if(validextensions.includes(filetype)){
+                    let fileReader=new FileReader();
+                    fileReader.onload=()=>{
+                        let fileurl=fileReader.result;
+                        img.src=fileurl;
+                    }
+                    fileReader.readAsDataURL(file);
+                }
+                else{
+                    alert("This is not an image file!");
+                }
+            }
+            border2.addEventListener('click', function(){
+                img.src="Images/Template2%20Photo.jpg";
+            });
+
+            var changeFontStyle = function (font) {
+			document.getElementById(
+				"page").style.fontFamily = font.value;
+            }
+            var changeFontSize = function (font) {
+			document.getElementById(
+				"page").style.fontSize = font.value;
+		    }
+
+            var changeFontStyleHeader = function(font){
+                for (i = 0; i < 16; i++) {
+                        document.getElementsByTagName("H6")[i].style.fontFamily  = font.value;
+                        document.getElementsByTagName("H4")[i].style.fontFamily  = font.value;
+                        }
+            }
+                        $('input[name="sectionToggle"]').change(function () {
+                                toggleSection($(this).val(), $(this).is(':checked'));
+                            });
+
+
+                            function toggleSection(sectionName, toggleState) {
+                                    if (toggleState == true)
+                                        $('input[value="' + sectionName + '"]').attr('checked', 'true');
+                                    else
+                                        $('input[value="' + sectionName + '"]').removeAttr('checked');
+                                            $('#' + sectionName).toggle();
+                                }
+            //Download pdf 
+
+
+            
+
+        //    tinymce.init({
+        //                 menubar: false,
+        //                 selector: '#spell',
+        //                 plugins: 'tinymcespellchecker',
+        //                 spellchecker_language: 'en',
+        //                 //   inline: true
+        //                 inline: true,
+        //                 toolbar: false,
+        //                 });
+
+         $('.auto-save').savy('load', function () {
+                console.log("All data from savy are loaded");
+
+            });
+        </script>
+        
+    </body>
+</html>
+
+
+<!-- children.map(el=>{}
+el=>{
+el.addEventListener('click',(e)=>{
+// assign text color
+}
+}
+} -->
+
+
